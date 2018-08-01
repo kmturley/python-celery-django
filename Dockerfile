@@ -23,5 +23,11 @@ RUN pip install Django=="$DJANGO_VERSION"
 ENV RAVEN_VERSION 6.2.1
 RUN pip install raven=="$RAVEN_VERSION"
 
+ENV DJANGO_REDIS_VERSION 4.3.0
+RUN pip install django-redis=="$DJANGO_REDIS_VERSION"
+
+ENV TENANT_VERSION 0.1.5
+RUN pip install tenant-schemas-celery=="$TENANT_VERSION"
+
 USER user
 CMD ["celery", "worker"]
